@@ -1,4 +1,5 @@
 import type { Model } from "@kolisachint/hoocode-ai";
+import { getModels } from "@kolisachint/hoocode-ai";
 import { describe, expect, test } from "vitest";
 import {
 	defaultModelPerProvider,
@@ -440,6 +441,12 @@ describe("resolveCliModel", () => {
 });
 
 describe("default model selection", () => {
+	// The release regenerates the catalog first; a default that upstream dropped
+	// must fail here, not in the publish step.
+	test.each(["fireworks", "together", "opencode-go"] as const)("%s default is in the catalog", (provider) => {
+		expect(getModels(provider).map((m) => m.id)).toContain(defaultModelPerProvider[provider]);
+	});
+
 	test("openai defaults track current models", () => {
 		expect(defaultModelPerProvider.openai).toBe("gpt-5.4");
 		expect(defaultModelPerProvider["openai-codex"]).toBe("gpt-5.6-terra");
