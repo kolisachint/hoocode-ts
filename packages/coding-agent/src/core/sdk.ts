@@ -154,7 +154,7 @@ function getAttributionHeaders(
 
 	if (model.provider === "openrouter" || model.baseUrl.includes("openrouter.ai")) {
 		return {
-			"HTTP-Referer": "https://github.com/kolisachint/hoocode",
+			"HTTP-Referer": "https://github.com/kolisachint/hoocode-ts",
 			"X-OpenRouter-Title": "hoocode",
 			"X-OpenRouter-Categories": "cli-agent",
 		};

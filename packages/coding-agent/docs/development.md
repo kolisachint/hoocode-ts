@@ -5,7 +5,7 @@ See [AGENTS.md](../../../AGENTS.md) for additional guidelines.
 ## Setup
 
 ```bash
-git clone https://github.com/kolisachint/hoocode
+git clone https://github.com/kolisachint/hoocode-ts
 cd hoocode
 npm install
 npm run build

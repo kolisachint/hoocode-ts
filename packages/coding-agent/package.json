@@ -8,9 +8,8 @@
 		"configDir": ".hoocode"
 	},
 	"bin": {
-		"hoocode": "./bin/hoocode.js",
-		"hoo": "./bin/hoocode.js",
-		"hoocode-ts": "./bin/hoocode.js"
+		"hoocode-ts": "./bin/hoocode.js",
+		"hoo-ts": "./bin/hoocode.js"
 	},
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -102,7 +101,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kolisachint/hoocode.git",
+		"url": "git+https://github.com/kolisachint/hoocode-ts.git",
 		"directory": "packages/coding-agent"
 	},
 	"engines": {

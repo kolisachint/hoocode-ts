@@ -8,16 +8,16 @@ One command, on any platform:
 
 ```bash
 # macOS and Linux
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 ```
 
 ```powershell
 # Windows
-irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 ```
 
 Already have Node 20+? `npm install -g @kolisachint/hoocode-agent` works too.
-Either way you get the `hoocode` (and `hoo`) command. Every other route --
+Either way you get the `hoocode-ts` (and `hoo-ts`) command. Every other route --
 standalone archives, offline machines, containers, source -- is on the
 [Install](install.md) page.
 

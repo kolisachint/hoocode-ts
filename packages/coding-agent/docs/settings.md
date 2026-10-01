@@ -78,9 +78,9 @@ across sessions.
 | `tips.starNudges` | number | `0` | How many times the "star the repo" nudge has been shown (lifetime cap: 3) |
 
 The tips themselves live in one file,
-[`src/modes/interactive/tips.ts`](https://github.com/kolisachint/hoocode/blob/main/packages/coding-agent/src/modes/interactive/tips.ts).
+[`src/modes/interactive/tips.ts`](https://github.com/kolisachint/hoocode-ts/blob/main/packages/coding-agent/src/modes/interactive/tips.ts).
 Know a trick that is not in there? [Send a
-PR](https://github.com/kolisachint/hoocode/blob/main/CONTRIBUTING.md) — it is one row in an array,
+PR](https://github.com/kolisachint/hoocode-ts/blob/main/CONTRIBUTING.md) — it is one row in an array,
 and it is genuinely one of the easiest useful first contributions to the project.
 
 ### Telemetry and update checks

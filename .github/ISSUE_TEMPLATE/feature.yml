@@ -56,7 +56,7 @@ body:
     attributes:
       label: Before you file
       options:
-        - label: I searched [existing issues](https://github.com/kolisachint/hoocode/issues?q=is%3Aissue) for this.
+        - label: I searched [existing issues](https://github.com/kolisachint/hoocode-ts/issues?q=is%3Aissue) for this.
           required: false
         - label: I would be interested in implementing this myself.
           required: false

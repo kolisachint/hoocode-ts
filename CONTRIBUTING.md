@@ -5,11 +5,11 @@ a whole provider — all of it. This page is short on purpose: it exists to help
 you land a change, not to fence you out.
 
 If you are here to file a bug or an idea, you can stop reading and
-[open an issue](https://github.com/kolisachint/hoocode/issues/new/choose). The
+[open an issue](https://github.com/kolisachint/hoocode-ts/issues/new/choose). The
 templates ask for exactly what a maintainer needs and nothing else.
 
 > If HooCode is useful to you, [star the
-> repo](https://github.com/kolisachint/hoocode) ★ — it is the single cheapest
+> repo](https://github.com/kolisachint/hoocode-ts) ★ — it is the single cheapest
 > thing you can do to help other people find it, and it takes one click.
 
 ## Good first contributions
@@ -25,14 +25,14 @@ Genuinely small, genuinely useful, and each one ships to every user:
 | **Improve an error message** | anywhere | The best bug reports come from people who hit a bad error and fixed it. |
 
 Issues tagged
-[`good first issue`](https://github.com/kolisachint/hoocode/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-and [`help wanted`](https://github.com/kolisachint/hoocode/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[`good first issue`](https://github.com/kolisachint/hoocode-ts/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+and [`help wanted`](https://github.com/kolisachint/hoocode-ts/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 are picked for the same reason. Say "I'll take this" on one and it is yours — no
 need to ask permission first.
 
 ## Reporting a bug
 
-Use the [bug template](https://github.com/kolisachint/hoocode/issues/new/choose).
+Use the [bug template](https://github.com/kolisachint/hoocode-ts/issues/new/choose).
 The three things that decide whether a bug gets fixed quickly:
 
 1. **What you did**, precisely enough to repeat it.
@@ -120,7 +120,7 @@ in lockstep.
 ## Getting help
 
 - **Questions, ideas, "is this a bug?"** —
-  [GitHub Issues](https://github.com/kolisachint/hoocode/issues/new/choose).
+  [GitHub Issues](https://github.com/kolisachint/hoocode-ts/issues/new/choose).
   Questions are welcome as issues; there is no separate forum to get lost in.
 - **Collaboration, or anything that does not fit an issue** — tag
   [@kolisachint on X](https://x.com/kolisachint).
@@ -136,5 +136,5 @@ things that get anyone blocked.
 
 ---
 
-Thanks for being here. ★ [Star the repo](https://github.com/kolisachint/hoocode)
+Thanks for being here. ★ [Star the repo](https://github.com/kolisachint/hoocode-ts)
 if HooCode has been useful — it genuinely helps.

@@ -210,7 +210,7 @@ vim ~/.hoocode/themes/my-theme.json
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/kolisachint/hoocode/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+  "$schema": "https://raw.githubusercontent.com/kolisachint/hoocode-ts/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
   "name": "my-theme",
   "vars": {
     "primary": "#00aaff",
@@ -280,7 +280,7 @@ vim ~/.hoocode/themes/my-theme.json
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/kolisachint/hoocode/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+  "$schema": "https://raw.githubusercontent.com/kolisachint/hoocode-ts/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
   "name": "my-theme",
   "description": "One line shown next to the name in the theme picker",
   "vars": {

@@ -36,7 +36,7 @@ resource config) that render *in the flow* — never as floating windows.
 ### Sources used to build this system
 All values were lifted directly from code (not screenshots), at commit `111a592`:
 
-- **Repo:** https://github.com/kolisachint/hoocode  *(explore further to build
+- **Repo:** https://github.com/kolisachint/hoocode-ts  *(explore further to build
   higher-fidelity designs — the TUI components are the source of truth)*
 - Upstream: https://github.com/earendil-works/pi-mono (and `badlogic/pi-mono`)
 - Themes: `packages/coding-agent/src/modes/interactive/theme/{dark,light}.json`

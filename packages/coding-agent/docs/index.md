@@ -9,13 +9,13 @@ One command, no runtime to install first.
 **macOS and Linux**
 
 ```bash
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 ```
 
 **Windows**
 
 ```powershell
-irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 ```
 
 Or, if you already have Node 20+:

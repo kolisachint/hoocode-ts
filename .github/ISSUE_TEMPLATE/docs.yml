@@ -9,7 +9,7 @@ body:
         resolve.
 
         If you already know what it should say, a PR against
-        [`packages/coding-agent/docs/`](https://github.com/kolisachint/hoocode/tree/main/packages/coding-agent/docs)
+        [`packages/coding-agent/docs/`](https://github.com/kolisachint/hoocode-ts/tree/main/packages/coding-agent/docs)
         is even more welcome than an issue — it is one of the easiest useful
         first contributions to the project.
 

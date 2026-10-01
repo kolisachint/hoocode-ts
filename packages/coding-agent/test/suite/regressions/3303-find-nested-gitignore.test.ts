@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { collectEntries } from "../../../src/core/tools/native-search.js";
 
 /**
- * Regression test for https://github.com/kolisachint/hoocode/issues/3303
+ * Regression test for https://github.com/kolisachint/hoocode-ts/issues/3303
  *
  * File discovery previously collected every `.gitignore` under the search path
  * and passed them to `fd` via `--ignore-file`. fd treats `--ignore-file`
