@@ -10,7 +10,7 @@
       2. Downloads it from the latest GitHub release and verifies its SHA256
          against the release's checksums.txt.
       3. Unpacks it into %USERPROFILE%\.hoocode\lib\hoocode and puts
-         hoocode.cmd / hoo.cmd in %USERPROFILE%\.hoocode\bin.
+         hoocode.cmd / hoo.cmd / hoocode-ts.cmd in %USERPROFILE%\.hoocode\bin.
       4. Optionally pre-seeds the external Rust tools (fd, rg, embsearch,
          webtools, voicetools) into that same bin directory, which is exactly
          where HooCode looks for them - so the first run is fast and works with
@@ -248,7 +248,8 @@ checksum mismatch for $Asset.
     # Shims rather than symlinks: creating a symlink on Windows needs either
     # Developer Mode or elevation, and this installer needs neither. `%*`
     # forwards arguments; `@echo off` keeps the shim out of the output.
-    foreach ($name in @('hoocode', 'hoo')) {
+    # `hoocode-ts` stays this build when `hoocode` on PATH is the Rust port.
+    foreach ($name in @('hoocode', 'hoo', 'hoocode-ts')) {
         $shim = Join-Path $BinDir "$name.cmd"
         "@echo off`r`n`"$LibDir\hoocode.exe`" %*" | Set-Content -Path $shim -Encoding ASCII
     }

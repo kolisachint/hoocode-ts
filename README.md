@@ -59,7 +59,7 @@ Full documentation: **[kolisachint.github.io/hoocode](https://kolisachint.github
 
 | Package | Description |
 |---------|-------------|
-| **[@kolisachint/hoocode-agent](packages/coding-agent)** | Interactive coding agent CLI (`hoocode` / `hoo`) |
+| **[@kolisachint/hoocode-agent](packages/coding-agent)** | Interactive coding agent CLI (`hoocode` / `hoo` / `hoocode-ts`) |
 | **[@kolisachint/hoocode-agent-core](packages/agent)** | Agent runtime with tool calling and state management |
 | **[@kolisachint/hoocode-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, …) |
 | **[@kolisachint/hoocode-tui](packages/tui)** | Terminal UI library with differential rendering |
