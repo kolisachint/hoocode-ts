@@ -4,7 +4,7 @@
 
 Extensions and custom tools can render custom TUI components for interactive user interfaces. This page covers the component system and available building blocks.
 
-**Source:** [`@kolisachint/hoocode-tui`](https://github.com/kolisachint/hoocode/tree/main/packages/tui)
+**Source:** [`@kolisachint/hoocode-tui`](https://github.com/kolisachint/hoocode-ts/tree/main/packages/tui)
 
 ## Component Interface
 

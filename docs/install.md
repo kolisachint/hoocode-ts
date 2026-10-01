@@ -22,12 +22,12 @@ working *on* HooCode rather than *with* it.
 
 ```bash
 # macOS and Linux
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 ```
 
 ```powershell
 # Windows
-irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 ```
 
 The installer sources are in [`install/`](../install). They install into
@@ -51,7 +51,7 @@ bun is the toolchain. It is pinned to the npm-compatible **hoisted** linker in
 authoritative lockfile.
 
 ```bash
-git clone https://github.com/kolisachint/hoocode.git
+git clone https://github.com/kolisachint/hoocode-ts.git
 cd hoocode
 
 bun install          # Install all dependencies

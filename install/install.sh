@@ -1,14 +1,15 @@
 #!/usr/bin/env sh
 #
-# HooCode one-click installer (macOS / Linux).
+# HooCode (TypeScript) one-click installer (macOS / Linux).
 #
-#   curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+#   curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 #
 # What it does
 #   1. Works out your platform (including musl vs glibc, which decides the build).
 #   2. Downloads the matching standalone binary from the latest GitHub release
 #      and verifies its sha256 against the release's checksums.txt.
-#   3. Unpacks it into ~/.hoocode/lib/hoocode and links ~/.hoocode/bin/{hoocode,hoo}.
+#   3. Unpacks it into ~/.hoocode/lib/hoocode-ts and links ~/.hoocode/bin/{hoocode-ts,hoo-ts}.
+#      (`hoocode` / `hoo` are the Rust build: https://github.com/kolisachint/hoocode)
 #   4. Optionally pre-seeds the external Rust tools (fd, rg, embsearch, webtools,
 #      voicetools) into ~/.hoocode/bin, which is exactly where HooCode looks for
 #      them -- so a first run is fast and works offline.
@@ -32,7 +33,7 @@
 
 set -eu
 
-REPO="kolisachint/hoocode"
+REPO="kolisachint/hoocode-ts"
 WEBSITE="https://kolisachint.github.io/hoocode/"
 # Every tool HooCode can use. fd and rg are the two that silently make everything
 # faster; the other three add capability HooCode otherwise does not have.
@@ -183,7 +184,7 @@ else
 fi
 
 # ------------------------------------------------------------------ paths ---
-LIB_DIR="$INSTALL_DIR/lib/hoocode"
+LIB_DIR="$INSTALL_DIR/lib/hoocode-ts"
 BIN_DIR="$INSTALL_DIR/bin"
 
 # A scratch dir that is cleaned up however the script exits, including a ^C
@@ -235,11 +236,25 @@ rm -rf "$LIB_DIR.old"
 mv "$STAGE" "$LIB_DIR"
 rm -rf "$LIB_DIR.old"
 
-# Every name in the package's bin map. `hoocode-ts` stays this TypeScript build
-# when `hoocode` on PATH is the Rust port (cortexcode), which installs as `hoocode`.
-ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoocode"
-ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoo"
+# Every name in the package's bin map. `hoocode` and `hoo` belong to the Rust
+# build (https://github.com/kolisachint/hoocode), so this one is `hoocode-ts`.
 ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoocode-ts"
+ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoo-ts"
+
+# Earlier TS installs owned `hoocode`/`hoo` via ~/.hoocode/lib/hoocode. Drop those
+# links (only ours) so the names are free for the Rust build.
+for _name in hoocode hoo; do
+    if [ -L "$BIN_DIR/$_name" ] && [ "$(readlink "$BIN_DIR/$_name")" = "$INSTALL_DIR/lib/hoocode/hoocode" ]; then
+        rm -f "$BIN_DIR/$_name"
+        say "    ${C_DIM}removed old link $BIN_DIR/$_name (now the Rust build's name)${C_0}"
+    fi
+done
+# ...and the old TS payload, once nothing links to it. Checked by package name so
+# a Rust install that later uses lib/hoocode is never touched.
+if [ -d "$INSTALL_DIR/lib/hoocode" ] && grep -q '"@kolisachint/hoocode-agent"' "$INSTALL_DIR/lib/hoocode/package.json" 2>/dev/null \
+    && [ ! -e "$BIN_DIR/hoocode" ] && [ ! -e "$BIN_DIR/hoo" ]; then
+    rm -rf "$INSTALL_DIR/lib/hoocode"
+fi
 
 # macOS quarantines anything downloaded, and the quarantine bit on a CLI shows up
 # as a Gatekeeper dialog nobody expects from a terminal. Clearing it here is the
@@ -404,11 +419,11 @@ fi
 
 # ------------------------------------------------------------------ done ----
 say ""
-say "${C_OK}${C_B}HooCode is installed.${C_0}"
+say "${C_OK}${C_B}HooCode (TypeScript) is installed.${C_0}"
 say ""
-say "  ${C_B}hoocode${C_0}          start in build mode ${C_DIM}(or ${C_B}hoo${C_0}${C_DIM}, same thing)${C_0}"
-say "  ${C_B}hoocode --help${C_0}   every flag"
-say "  ${C_B}/login${C_0}           pick a provider once you are in"
+say "  ${C_B}hoocode-ts${C_0}          start in build mode ${C_DIM}(or ${C_B}hoo-ts${C_0}${C_DIM}, same thing)${C_0}"
+say "  ${C_B}hoocode-ts --help${C_0}   every flag"
+say "  ${C_B}/login${C_0}              pick a provider once you are in"
 say ""
 say "  Docs      ${C_ACC}$WEBSITE${C_0}"
 say "  Source    ${C_ACC}https://github.com/$REPO${C_0}"

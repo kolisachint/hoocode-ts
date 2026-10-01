@@ -34,12 +34,12 @@ jobs:
 
             If you would like to take a swing at it yourself, say so and we will
             point you at the right files —
-            [CONTRIBUTING.md](https://github.com/kolisachint/hoocode/blob/main/CONTRIBUTING.md)
+            [CONTRIBUTING.md](https://github.com/kolisachint/hoocode-ts/blob/main/CONTRIBUTING.md)
             lists a few places that are genuinely easy to start from.
 
 
             And if HooCode is useful to you, [a
-            star](https://github.com/kolisachint/hoocode) is the cheapest way to
+            star](https://github.com/kolisachint/hoocode-ts) is the cheapest way to
             help other people find it.
           pr-message: >
             Thanks for your first pull request — this is the good stuff.
@@ -52,10 +52,10 @@ jobs:
 
             A reviewer will be along. If they ask why something is the way it
             is, it is curiosity rather than an objection — the
-            [guide](https://github.com/kolisachint/hoocode/blob/main/CONTRIBUTING.md)
+            [guide](https://github.com/kolisachint/hoocode-ts/blob/main/CONTRIBUTING.md)
             explains what makes a PR quick to merge.
 
 
             If you have not already, [a
-            star](https://github.com/kolisachint/hoocode) helps more people find
+            star](https://github.com/kolisachint/hoocode-ts) helps more people find
             the project.

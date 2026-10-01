@@ -16,13 +16,13 @@ plugins in a single binary. Nothing applies without your approval.
 **macOS / Linux**
 
 ```bash
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 ```
 
 **Windows**
 
 ```powershell
-irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 ```
 
 **npm** (needs Node ≥ 20)
@@ -34,7 +34,7 @@ npm install -g @kolisachint/hoocode-agent
 Then:
 
 ```bash
-hoocode --help
+hoocode-ts --help
 ```
 
 The one-click installers need no root, install into `~/.hoocode`, and pre-seed
@@ -59,7 +59,7 @@ Full documentation: **[kolisachint.github.io/hoocode](https://kolisachint.github
 
 | Package | Description |
 |---------|-------------|
-| **[@kolisachint/hoocode-agent](packages/coding-agent)** | Interactive coding agent CLI (`hoocode` / `hoo` / `hoocode-ts`) |
+| **[@kolisachint/hoocode-agent](packages/coding-agent)** | Interactive coding agent CLI (`hoocode-ts` / `hoo-ts`; `hoocode` is the [Rust build](https://github.com/kolisachint/hoocode)) |
 | **[@kolisachint/hoocode-agent-core](packages/agent)** | Agent runtime with tool calling and state management |
 | **[@kolisachint/hoocode-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, …) |
 | **[@kolisachint/hoocode-tui](packages/tui)** | Terminal UI library with differential rendering |
@@ -77,16 +77,16 @@ Genuinely easy places to start:
   will confuse the next person.
 - **[Write an example extension](packages/coding-agent/examples/extensions)** —
   self-contained, no core changes.
-- **[good first issue](https://github.com/kolisachint/hoocode/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)**
+- **[good first issue](https://github.com/kolisachint/hoocode-ts/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)**
   — say "I'll take this" and it is yours.
 
 See **[CONTRIBUTING.md](CONTRIBUTING.md)**. Questions are welcome as
-[issues](https://github.com/kolisachint/hoocode/issues/new/choose); for
+[issues](https://github.com/kolisachint/hoocode-ts/issues/new/choose); for
 collaboration or anything that does not fit one, tag
 [@kolisachint on X](https://x.com/kolisachint).
 
 > ★ **If HooCode is useful to you, [star the
-> repo](https://github.com/kolisachint/hoocode).** One click, and it is the
+> repo](https://github.com/kolisachint/hoocode-ts).** One click, and it is the
 > single cheapest way to help other people find it.
 
 ## Credits

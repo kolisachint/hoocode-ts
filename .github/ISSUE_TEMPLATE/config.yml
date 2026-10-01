@@ -9,7 +9,7 @@ contact_links:
     about: Install, providers, settings, keybindings, extensions, plugins — start here.
 
   - name: Ask a question
-    url: https://github.com/kolisachint/hoocode/issues/new?labels=question&template=question.yml
+    url: https://github.com/kolisachint/hoocode-ts/issues/new?labels=question&template=question.yml
     about: Questions are welcome as issues. There is no separate forum to get lost in.
 
   - name: Collaboration and everything else
@@ -17,5 +17,5 @@ contact_links:
     about: Tag @kolisachint on X for anything that does not fit an issue.
 
   - name: Star HooCode
-    url: https://github.com/kolisachint/hoocode
+    url: https://github.com/kolisachint/hoocode-ts
     about: One click, and it is the cheapest way to help other people find the project.

@@ -2,6 +2,23 @@
 
 ## [Unreleased]
 
+### Changed
+
+- **The TypeScript build now installs as `hoocode-ts` (and `hoo-ts`).** The
+  plain `hoocode` / `hoo` names belong to the Rust build
+  ([kolisachint/hoocode](https://github.com/kolisachint/hoocode)). The npm
+  package keeps its name, `@kolisachint/hoocode-agent`.
+- The one-click installers moved to
+  `https://kolisachint.github.io/hoocode-ts/install.sh` (and `install.ps1`) and
+  install into `~/.hoocode/lib/hoocode-ts`. Re-running one removes the old
+  `hoocode` / `hoo` links an earlier TS install left behind.
+
+### Fixed
+
+- The installers downloaded from `kolisachint/hoocode`, which is now the Rust
+  repository, so every install failed. They now use `kolisachint/hoocode-ts`,
+  as do the repository links in the app, docs and theme schemas.
+
 ## [0.5.90] - 2026-09-25
 
 ## [0.5.89] - 2026-09-24
@@ -101,8 +118,8 @@
   working binary for the first time.
 
   ```bash
-  curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh   # macOS, Linux
-  irm https://kolisachint.github.io/hoocode/install.ps1 | iex        # Windows
+  curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh   # macOS, Linux
+  irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex        # Windows
   ```
 
   Both installers detect the platform (including musl vs glibc), verify the
@@ -2565,7 +2582,7 @@
   rule in the theme read at one weight. `ruleMuted` is now `#958b6d`, matching
   the separation `vox-dark` already had and staying above 3:1 against the
   theme's cream canvas
-  ([#174](https://github.com/kolisachint/hoocode/issues/174))
+  ([#174](https://github.com/kolisachint/hoocode-ts/issues/174))
 
 ## [0.5.9] - 2026-08-12
 
@@ -3786,7 +3803,7 @@
   text content for **all** supported formats, including xlsx cell values and pptx
   slide text. This picks up the upstream `filetools` `v0.1.7` fix ("reach full
   cell/text content via scan/grep/read for all formats"), which closes the
-  xlsx-only gap tracked in [#78](https://github.com/kolisachint/hoocode/issues/78)
+  xlsx-only gap tracked in [#78](https://github.com/kolisachint/hoocode-ts/issues/78)
   where `DocGrep`/`DocPeek` previously surfaced sheet structure only. The
   `DocGrep`/`DocPeek` prompt guidelines that steered spreadsheet cell work to
   `DocRead`/`DocEdit` are dropped, and the coverage matrix in

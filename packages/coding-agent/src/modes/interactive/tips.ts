@@ -261,7 +261,7 @@ export const TIPS: readonly Tip[] = [
 		title: "Something broken or missing?",
 		body: [
 			"Open an issue — bug reports and feature ideas are both welcome.",
-			"github.com/kolisachint/hoocode/issues",
+			"github.com/kolisachint/hoocode-ts/issues",
 		],
 		moments: ["idle"],
 	},
@@ -279,7 +279,7 @@ export const TIPS: readonly Tip[] = [
 export const STAR_NUDGE: Tip = {
 	id: "star",
 	title: "★ Enjoying HooCode? Star it.",
-	body: ["It is the cheapest way to help people find it.", "github.com/kolisachint/hoocode"],
+	body: ["It is the cheapest way to help people find it.", "github.com/kolisachint/hoocode-ts"],
 	moments: ["idle"],
 };
 

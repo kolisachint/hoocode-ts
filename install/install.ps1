@@ -1,16 +1,17 @@
 <#
 .SYNOPSIS
-    HooCode one-click installer for Windows.
+    HooCode (TypeScript) one-click installer for Windows.
 
 .DESCRIPTION
-    irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+    irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 
     What it does:
       1. Works out your architecture and picks the matching standalone build.
       2. Downloads it from the latest GitHub release and verifies its SHA256
          against the release's checksums.txt.
-      3. Unpacks it into %USERPROFILE%\.hoocode\lib\hoocode and puts
-         hoocode.cmd / hoo.cmd / hoocode-ts.cmd in %USERPROFILE%\.hoocode\bin.
+      3. Unpacks it into %USERPROFILE%\.hoocode\lib\hoocode-ts and puts
+         hoocode-ts.cmd / hoo-ts.cmd in %USERPROFILE%\.hoocode\bin.
+         (hoocode / hoo are the Rust build: https://github.com/kolisachint/hoocode)
       4. Optionally pre-seeds the external Rust tools (fd, rg, embsearch,
          webtools, voicetools) into that same bin directory, which is exactly
          where HooCode looks for them - so the first run is fast and works with
@@ -43,12 +44,12 @@
     <base>/<tag>/checksums.txt. For mirrors, air-gapped installs, and tests.
 
 .EXAMPLE
-    irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+    irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 
 .EXAMPLE
     # With options, the download has to be saved first - a piped script cannot
     # take arguments.
-    irm https://kolisachint.github.io/hoocode/install.ps1 -OutFile install.ps1
+    irm https://kolisachint.github.io/hoocode-ts/install.ps1 -OutFile install.ps1
     .\install.ps1 -NoTools
 #>
 [CmdletBinding()]
@@ -63,7 +64,7 @@ param(
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
-$Repo    = 'kolisachint/hoocode'
+$Repo    = 'kolisachint/hoocode-ts'
 $Website = 'https://kolisachint.github.io/hoocode/'
 
 # ------------------------------------------------------------------ output --
@@ -173,7 +174,7 @@ $Base = if ($env:HOOCODE_RELEASE_BASE_URL) {
 }
 
 # ------------------------------------------------------------------ paths ---
-$LibDir = Join-Path $InstallDir 'lib\hoocode'
+$LibDir = Join-Path $InstallDir 'lib\hoocode-ts'
 $BinDir = Join-Path $InstallDir 'bin'
 $TmpDir = Join-Path ([System.IO.Path]::GetTempPath()) ("hoocode-install-" + [Guid]::NewGuid().ToString('N').Substring(0, 8))
 New-Item -ItemType Directory -Path $TmpDir -Force | Out-Null
@@ -248,10 +249,20 @@ checksum mismatch for $Asset.
     # Shims rather than symlinks: creating a symlink on Windows needs either
     # Developer Mode or elevation, and this installer needs neither. `%*`
     # forwards arguments; `@echo off` keeps the shim out of the output.
-    # `hoocode-ts` stays this build when `hoocode` on PATH is the Rust port.
-    foreach ($name in @('hoocode', 'hoo', 'hoocode-ts')) {
+    # `hoocode` / `hoo` belong to the Rust build, so this one is `hoocode-ts`.
+    foreach ($name in @('hoocode-ts', 'hoo-ts')) {
         $shim = Join-Path $BinDir "$name.cmd"
         "@echo off`r`n`"$LibDir\hoocode.exe`" %*" | Set-Content -Path $shim -Encoding ASCII
+    }
+    # Earlier TS installs wrote hoocode.cmd / hoo.cmd pointing at lib\hoocode.
+    # Remove only those, so the names are free for the Rust build.
+    $OldLib = Join-Path $InstallDir 'lib\hoocode'
+    foreach ($name in @('hoocode', 'hoo')) {
+        $shim = Join-Path $BinDir "$name.cmd"
+        if ((Test-Path $shim) -and ((Get-Content -Raw $shim) -like "*$OldLib\hoocode.exe*")) {
+            Remove-Item -Force $shim
+            Write-Note "removed old $name.cmd (now the Rust build's name)"
+        }
     }
 
     # Mark-of-the-web: anything downloaded carries a zone identifier that makes
@@ -367,11 +378,11 @@ checksum mismatch for $Asset.
 
     # ------------------------------------------------------------- done -----
     Write-Host ''
-    Write-Host 'HooCode is installed.' -ForegroundColor Green
+    Write-Host 'HooCode (TypeScript) is installed.' -ForegroundColor Green
     Write-Host ''
-    Write-Host '  hoocode          ' -NoNewline -ForegroundColor White; Write-Host 'start in build mode (or `hoo`, same thing)'
-    Write-Host '  hoocode --help   ' -NoNewline -ForegroundColor White; Write-Host 'every flag'
-    Write-Host '  /login           ' -NoNewline -ForegroundColor White; Write-Host 'pick a provider once you are in'
+    Write-Host '  hoocode-ts          ' -NoNewline -ForegroundColor White; Write-Host 'start in build mode (or `hoo-ts`, same thing)'
+    Write-Host '  hoocode-ts --help   ' -NoNewline -ForegroundColor White; Write-Host 'every flag'
+    Write-Host '  /login              ' -NoNewline -ForegroundColor White; Write-Host 'pick a provider once you are in'
     Write-Host ''
     Write-Host "  Docs      $Website" -ForegroundColor Cyan
     Write-Host "  Source    https://github.com/$Repo" -ForegroundColor Cyan

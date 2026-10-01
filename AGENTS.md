@@ -446,8 +446,8 @@ Use these sections under `## [Unreleased]`:
 
 ### Attribution
 
-- **Internal changes (from issues)**: `Fixed foo bar ([#123](https://github.com/kolisachint/hoocode/issues/123))`
-- **External contributions**: `Added feature X ([#456](https://github.com/kolisachint/hoocode/pull/456) by [@username](https://github.com/username))`
+- **Internal changes (from issues)**: `Fixed foo bar ([#123](https://github.com/kolisachint/hoocode-ts/issues/123))`
+- **External contributions**: `Added feature X ([#456](https://github.com/kolisachint/hoocode-ts/pull/456) by [@username](https://github.com/username))`
 
 ## Adding a New LLM Provider (packages/ai)
 

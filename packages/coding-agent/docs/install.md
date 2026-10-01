@@ -2,20 +2,21 @@
 
 HooCode ships two ways: a **standalone binary** with no runtime to install, and
 an **npm package** for machines that already have Node. Both give you the same
-`hoocode` (and `hoo`) command.
+`hoocode-ts` (and `hoo-ts`) command. The plain `hoocode` / `hoo` names belong to
+the [Rust build](https://github.com/kolisachint/hoocode).
 
 ## One-click install
 
 ### macOS and Linux
 
 ```bash
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh | sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh | sh
 ```
 
 ### Windows
 
 ```powershell
-irm https://kolisachint.github.io/hoocode/install.ps1 | iex
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 | iex
 ```
 
 That is the whole thing. The installer:
@@ -24,7 +25,7 @@ That is the whole thing. The installer:
    Linux build you get. Alpine and `static` distroless images are supported.
 2. Downloads the matching standalone binary from the latest GitHub release and
    verifies its SHA256 against the release's `checksums.txt`.
-3. Installs into `~/.hoocode/lib/hoocode` and links `~/.hoocode/bin/{hoocode,hoo}`.
+3. Installs into `~/.hoocode/lib/hoocode-ts` and links `~/.hoocode/bin/{hoocode-ts,hoo-ts}`.
 4. Pre-seeds the [external tools](#external-tools) into `~/.hoocode/bin`, which
    is exactly where HooCode looks for them — so your first run is fast and works
    offline.
@@ -55,18 +56,18 @@ A piped script cannot take arguments, so to pass options either set the
 environment variable:
 
 ```bash
-HOOCODE_SKIP_TOOLS=1 sh -c "$(curl -fsSL https://kolisachint.github.io/hoocode/install.sh)"
+HOOCODE_SKIP_TOOLS=1 sh -c "$(curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh)"
 ```
 
 or download the script first:
 
 ```bash
-curl -fsSL https://kolisachint.github.io/hoocode/install.sh -o install.sh
+curl -fsSL https://kolisachint.github.io/hoocode-ts/install.sh -o install.sh
 sh install.sh --no-tools --version v1.2.3
 ```
 
 ```powershell
-irm https://kolisachint.github.io/hoocode/install.ps1 -OutFile install.ps1
+irm https://kolisachint.github.io/hoocode-ts/install.ps1 -OutFile install.ps1
 .\install.ps1 -NoTools
 ```
 
@@ -77,7 +78,7 @@ no prebuilt binary.
 
 ```bash
 npm install -g @kolisachint/hoocode-agent
-hoocode --help
+hoocode-ts --help
 ```
 
 `pnpm add -g`, `yarn global add`, and `bun install -g` all work too — HooCode
@@ -101,12 +102,12 @@ Every release publishes a standalone archive per platform, plus a
 Windows on ARM runs the x64 build under emulation; there is no native arm64
 Windows binary yet, because the compiler has no such target.
 
-Grab them from the [releases page](https://github.com/kolisachint/hoocode/releases),
+Grab them from the [releases page](https://github.com/kolisachint/hoocode-ts/releases),
 verify, and unpack:
 
 ```bash
 sha256sum -c checksums.txt --ignore-missing
-tar -xzf hoocode-linux-x64.tar.gz -C ~/.hoocode/lib/hoocode
+tar -xzf hoocode-linux-x64.tar.gz -C ~/.hoocode/lib/hoocode-ts
 ```
 
 The binary expects the rest of the archive (themes, docs, canvas SDK, examples)
@@ -178,7 +179,7 @@ bun is the toolchain. It is pinned to the npm-compatible **hoisted** linker in
 authoritative lockfile.
 
 ```bash
-git clone https://github.com/kolisachint/hoocode.git
+git clone https://github.com/kolisachint/hoocode-ts.git
 cd hoocode
 
 bun install          # install all dependencies
@@ -213,9 +214,9 @@ If you installed from npm: `npm uninstall -g @kolisachint/hoocode-agent`.
 ---
 
 Something here wrong or missing? [Open an
-issue](https://github.com/kolisachint/hoocode/issues/new/choose) — install
+issue](https://github.com/kolisachint/hoocode-ts/issues/new/choose) — install
 problems are the most useful bug reports we get, because they are the ones that
 stop people before they start.
 
 And if HooCode earns its place in your terminal, [a
-star](https://github.com/kolisachint/hoocode) is the cheapest way to say so. ★
+star](https://github.com/kolisachint/hoocode-ts) is the cheapest way to say so. ★
