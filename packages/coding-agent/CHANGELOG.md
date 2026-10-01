@@ -18,6 +18,9 @@
 - The installers downloaded from `kolisachint/hoocode`, which is now the Rust
   repository, so every install failed. They now use `kolisachint/hoocode-ts`,
   as do the repository links in the app, docs and theme schemas.
+- Default models for `fireworks`, `together` and `opencode-go` pointed at Kimi
+  K2.6, which those providers no longer list; they now default to Kimi K3. A
+  test now fails when a default drops out of the model catalog.
 
 ## [0.5.90] - 2026-09-25
 

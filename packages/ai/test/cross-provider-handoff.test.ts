@@ -83,7 +83,7 @@ const PROVIDER_MODEL_PAIRS: ProviderModelPair[] = [
 	// Hugging Face
 	{ provider: "huggingface", model: "moonshotai/Kimi-K2.5", label: "huggingface-kimi-k2.5" },
 	// Together AI
-	{ provider: "together", model: "moonshotai/Kimi-K2.6", label: "together-kimi-k2.6" },
+	{ provider: "together", model: "moonshotai/Kimi-K3", label: "together-kimi-k3" },
 	// Kimi For Coding
 	{ provider: "kimi-coding", model: "kimi-for-coding", label: "kimi-coding-for-coding" },
 	// MiniMax
@@ -97,7 +97,7 @@ const PROVIDER_MODEL_PAIRS: ProviderModelPair[] = [
 	{ provider: "opencode", model: "gpt-5.3-codex", label: "zen-gpt-5.3-codex" },
 	{ provider: "opencode", model: "minimax-m2.1-free", label: "zen-minimax-m2.1-free" },
 	// OpenCode Go
-	{ provider: "opencode-go", model: "kimi-k2.6", label: "go-kimi-k2.6" },
+	{ provider: "opencode-go", model: "kimi-k3", label: "go-kimi-k3" },
 	{ provider: "opencode-go", model: "minimax-m2.7", label: "go-minimax-m2.7" },
 	// Xiaomi MiMo
 	{ provider: "xiaomi", model: "mimo-v2.5-pro", label: "xiaomi-mimo-v2.5-pro" },
