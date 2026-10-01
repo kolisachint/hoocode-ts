@@ -235,9 +235,11 @@ rm -rf "$LIB_DIR.old"
 mv "$STAGE" "$LIB_DIR"
 rm -rf "$LIB_DIR.old"
 
-# Both names, because both are in the package's bin map.
+# Every name in the package's bin map. `hoocode-ts` stays this TypeScript build
+# when `hoocode` on PATH is the Rust port (cortexcode), which installs as `hoocode`.
 ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoocode"
 ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoo"
+ln -sf "$LIB_DIR/hoocode" "$BIN_DIR/hoocode-ts"
 
 # macOS quarantines anything downloaded, and the quarantine bit on a CLI shows up
 # as a Gatekeeper dialog nobody expects from a terminal. Clearing it here is the

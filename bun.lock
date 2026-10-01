@@ -60,6 +60,7 @@
       "bin": {
         "hoocode": "./bin/hoocode.js",
         "hoo": "./bin/hoocode.js",
+        "hoocode-ts": "./bin/hoocode.js",
       },
       "dependencies": {
         "@kolisachint/hoocode-agent-core": "^0.5.22",
